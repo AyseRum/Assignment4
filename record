@@ -1,0 +1,24 @@
+/*============== record ================
+	This function records data into array and prints the data.
+		Pre		Nothing
+		Post	Array is filled, data printed.
+*/
+void record (int d[MAX_ROW][MAX_COL])
+{
+	//Local Declarations
+	FILE* Gr_Book;
+	int data;
+	
+	//Statements
+	Gr_Book = fopen ("ErginAyse-Data4.dat", "r");
+	while (fscanf(Gr_Book, "%d %d %d %d %d %d", &d[N][0], &d[N][1], &d[N][2], &d[N][3], &d[N][4], &d[N][5]) != EOF)
+		N++;
+		
+	for (int i = 0; i< N; i++)
+	{
+		printf("%d\t%d\t%d\t%d\t%d\t%d\n", d[i][0], d[i][1], d[i][2], d[i][3], d[i][4], d[i][5]);
+	}//for
+		
+	fclose (Gr_Book);
+	return;
+}//record
