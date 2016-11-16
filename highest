@@ -1,0 +1,20 @@
+/*=============== highest ============
+	This function determines the highest score.
+		Pre		Nothing
+		Post	Highest value printed.
+*/
+void highest (int d[MAX_ROW][MAX_COL])
+{
+	int high[6];
+	for (int i= 1 ; i< 6; i++)
+	{
+		high[i]= d[0][i];
+		for (int j = 1; j < N; j++)
+		{
+			if (d[j][i] > high[i])
+        		high[i] = d[j][i];
+        }//for
+	}//for
+	printf("\nHighest\t%d\t%d\t%d\t%d\t%d\t", high[1], high[2], high[3], high[4], high[5]);
+return;
+}//highest
