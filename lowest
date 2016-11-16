@@ -1,0 +1,21 @@
+/*=============== lowest ============
+	This function determines the lowest score.
+		Pre		Nothing
+		Post	Lowest value printed.
+*/
+
+void lowest (int d[MAX_ROW][MAX_COL])
+{
+	int low[6];
+	for (int n= 1; n< 6; n++)
+	{
+		low[n] = d[0][n];
+		for (int i= 1 ; i< N; i++)
+		{
+			if(d[i][n] < low[n])
+      			low[n] = d[i][n];
+		}//for
+	}//for
+	printf("\nLowest\t%d\t%d\t%d\t%d\t%d\t", low[1], low[2], low[3], low[4], low[5]);
+	return;
+}//lowest
