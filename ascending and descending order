@@ -1,0 +1,45 @@
+/*============ ascendingSort ==============
+ This function sorts the given array in an ascending order
+ 	Pre		:	Given array, last element of that array.
+ 	Post	:	Array sorted ascending.
+*/
+
+void ascendingSort (int* pAry, int* pLast)
+{
+	int* pWalker;
+	int* pSmallest;
+	int temp;
+	
+	for(pWalker = pAry; pWalker < pLast; pWalker++)
+		{
+		pSmallest = smallest (pWalker, pLast);
+		temp= *pWalker;
+		*pWalker = *pSmallest;
+		*pSmallest = temp;
+		}
+	return;
+}// ascendingSort
+
+
+
+/* ============ descendingSort =============
+ This function sorts the given array in an descending order
+ 	Pre		:	Given array, last element of that array.
+ 	Post	:	Array sorted descending.
+*/
+
+void descendingSort (int* pAry, int* pLast)
+{
+	int* pWalker;
+	int* pLargest;
+	int temp;
+
+	for(pWalker = pAry; pWalker < pLast; pWalker++)
+		{
+		pLargest = largest (pWalker, pLast); 
+		temp= *pWalker;
+		*pWalker = *pLargest;
+		*pLargest = temp;
+		}
+	return;
+}
