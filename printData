@@ -1,0 +1,43 @@
+/* ============ printData ==============
+ This function prints the ascending and descending sorted types of an array
+ 	and array itself.
+ 	Pre		: Array
+ 	Post	: Array sorted in ascending and descending order.
+ 			  Ascending, Original, Descending lists printed.
+*/
+void printData (int* pAry)
+{
+	int *aLast; 
+	int *dLast;
+	int* pAsc;
+	int* pDes;
+	
+	pAsc = (int*)malloc(SIZE * sizeof(int) );
+	if(pAsc == NULL)
+		free(pAsc);
+	
+	pDes = (int*) malloc(SIZE * sizeof(int) );
+	if( pDes == NULL)
+		free(pDes);
+
+	for (int i = 0; i< SIZE; i++)
+	{
+		pAsc[i] = pAry[i];
+		pDes[i] = pAry[i];
+	}
+	aLast = &pAsc[4];
+	dLast = &pDes[4];	
+	
+	ascendingSort (pAsc, aLast);
+	descendingSort (pDes, dLast);
+	
+	printf("\n\tAscending\t\tOriginal\t\tDescending\n");
+	
+	for(int i = 0; i < SIZE; i++)
+	{
+		printf("\t%4d\t\t\t%4d\t\t\t%4d\n", pAsc[i], pAry[i], pDes[i]);
+	}
+	
+
+	return;
+}//printData
